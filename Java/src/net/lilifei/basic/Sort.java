@@ -174,4 +174,33 @@ public class Sort {
             }
         }
     }
+
+    /**
+     * Insert Sort Recursive Version
+     *
+     * @param A : the array of Integer that is to be sorted
+     */
+    public static void insertSortRecursive(int[] A) {
+        insertSortRecursive(A, A.length - 1);
+    }
+
+    /**
+     * Helper function of insertSortRecursive
+     *
+     * @param A   : the array of Integer that is to be sorted
+     * @param end : end index of unsorted part
+     */
+    private static void insertSortRecursive(int[] A, int end) {
+        if (end <= 0) {
+            return;
+        }
+        insertSortRecursive(A, end - 1);
+        int i = end - 1;
+        int key = A[end];
+        while (i >= 0 && A[i] > key) {
+            A[i + 1] = A[i];
+            i--;
+        }
+        A[i + 1] = key;
+    }
 }

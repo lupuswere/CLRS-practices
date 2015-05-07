@@ -70,4 +70,12 @@ public class SortTest{
             assertArrayEquals(this.expecteds[i], this.beforeSorted[i]);
         }
     }
+
+    @Test
+    public void testInsertSortRecursive() throws Exception {
+        for(int i = 0; i < this.beforeSorted.length; i++) {
+            Sort.insertSortRecursive(this.beforeSorted[i]);
+            assertArrayEquals(this.expecteds[i], this.beforeSorted[i]);
+        }
+    }
 }
