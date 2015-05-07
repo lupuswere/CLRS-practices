@@ -27,12 +27,9 @@ public class SortTest{
     @Before
     public void setUp() throws Exception {
         Random rd = new Random();
-        int countOfTestCases = 100;
-        int lengthOfTestCase = 100;
-        int rangeOfTestCase = 200;
-        for(int i = 0; i < countOfTestCases; i++) {
-            for(int j = 0; j < lengthOfTestCase; j++) {
-                int rdInt = rd.nextInt(rangeOfTestCase) - 100;
+        for(int i = 0; i < this.countOfTestCases; i++) {
+            for(int j = 0; j < this.lengthOfTestCase; j++) {
+                int rdInt = rd.nextInt(this.rangeOfTestCase) - 100;
                 this.beforeSorted[i][j] = rdInt; // Range (-100, 100)
                 this.expecteds[i][j] = rdInt;
             }
@@ -56,5 +53,13 @@ public class SortTest{
         int[] expecteds = {120, 55, 29, 23, 3, 2, -1, -5, -33};
         Sort.insertSortDescending(actuals);
         assertArrayEquals(expecteds, actuals);
+    }
+
+    @Test
+    public void testMergeSort() throws Exception {
+        for(int i = 0; i < this.beforeSorted.length; i++) {
+            Sort.mergeSort(this.beforeSorted[i]);
+            assertArrayEquals(this.expecteds[i], this.beforeSorted[i]);
+        }
     }
 }
