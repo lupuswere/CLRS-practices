@@ -1,5 +1,8 @@
 package net.lilifei.basic;
 
+import net.lilifei.random.RandomAlgorithm;
+
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -81,7 +84,7 @@ public class Search {
     }
 
     /**
-     * 5-2 : Search in unsorted array
+     * 5-2 a) : Search in unsorted array
      *
      * @param A      : the array
      * @param target : the number to be searched for
@@ -97,15 +100,100 @@ public class Search {
         Random rd = new Random();
         while (searchedIndices < lenA) {
             int index = rd.nextInt(lenA);
-            while(indices[index]) {
+            while (indices[index]) {
                 index = rd.nextInt(lenA);
             }
             searchedIndices++;
-            if(target == A[index]) {
+            if (target == A[index]) {
                 return index;
             }
             indices[index] = true;
         }
         return -1;
+    }
+
+    /**
+     * 5-2 a) : Search in unsorted array
+     *
+     * @param A      : the array
+     * @param target : the number to be searched for
+     * @return : true : exist; false : not exist
+     */
+    public static boolean randomSearchBool(int[] A, int target) {
+        if (A == null || A.length == 0) {
+            return false;
+        }
+        int lenA = A.length;
+        boolean[] indices = new boolean[lenA];
+        int searchedIndices = 0;
+        Random rd = new Random();
+        while (searchedIndices < lenA) {
+            int index = rd.nextInt(lenA);
+            while (indices[index]) {
+                index = rd.nextInt(lenA);
+            }
+            searchedIndices++;
+            if (target == A[index]) {
+                return true;
+            }
+            indices[index] = true;
+        }
+        return false;
+    }
+
+    /**
+     * 5-2 e) : Deterministic Search (Brute Force)
+     *
+     * @param A      : a randomly arranged array
+     * @param target : the Integer to be searched for
+     * @return : the index of the number, if not in the array, return -1
+     */
+    public static int deterministicSearch(int[] A, int target) {
+        if (A == null || A.length == 0) {
+            return -1;
+        }
+        int lenA = A.length;
+        for (int i = 0; i < lenA; i++) {
+            if (A[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 5-2 e) : Deterministic Search (Brute Force)
+     *
+     * @param A      : a randomly arranged array
+     * @param target : the Integer to be searched for
+     * @return : true : exist; false : not exist
+     */
+    public static boolean deterministicSearchBool(int[] A, int target) {
+        if (A == null || A.length == 0) {
+            return false;
+        }
+        int lenA = A.length;
+        for (int i = 0; i < lenA; i++) {
+            if (A[i] == target) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Randomly Permute the original array, then random search
+     *
+     * @param A      : a randomly arranged array
+     * @param target : the Integer to be searched for
+     * @return : true : exist; false : not exist
+     */
+    public static boolean scrambleSearch(int[] A, int target) {
+        if (A == null || A.length == 0) {
+            return false;
+        }
+        int[] B = Arrays.copyOf(A, A.length);
+        RandomAlgorithm.permuteWithoutIdentity(B);
+        return randomSearchBool(B, target);
     }
 }
