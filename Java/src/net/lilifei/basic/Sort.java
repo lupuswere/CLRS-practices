@@ -232,4 +232,67 @@ public class Sort {
         }
         return false;
     }
+
+    /**
+     * 2-4 : Inversion
+     *
+     * @param A : an array of Integers
+     * @return : the count of inversions in the array
+     */
+    public static int countOfInversions(int[] A) {
+        if (A == null || A.length == 0) {
+            return 0;
+        }
+        int[] B = Arrays.copyOf(A, A.length);
+        return countOfInversions(B, 0, B.length - 1);
+    }
+
+    /**
+     * Helper function of countOfInversions
+     *
+     * @param A : an array of Integers
+     * @param p : the start index of the part to be counted
+     * @param r : the end index of the part to be counted
+     * @return : the count of inversions in the part
+     */
+    private static int countOfInversions(int[] A, int p, int r) {
+        if (p < r) {
+            int q = (p + r) / 2;
+            int left = countOfInversions(A, p, q);
+            int right = countOfInversions(A, q + 1, r);
+            int merge = mergeCounts(A, p, q, r);
+            return left + right + merge;
+        } else {
+            return 0;
+        }
+    }
+
+    private static int mergeCounts(int[] A, int p, int q, int r) {
+        int count = 0;
+        int n1 = q - p + 1;
+        int n2 = r - q;
+        int[] L = new int[n1 + 1];
+        int[] R = new int[n2 + 1];
+        for (int i = 0; i < n1; i++) {
+            L[i] = A[p + i];
+        }
+        for (int j = 0; j < n2; j++) {
+            R[j] = A[q + j + 1];
+        }
+        L[n1] = Integer.MAX_VALUE;
+        R[n2] = Integer.MAX_VALUE;
+        int i = 0;
+        int j = 0;
+        for (int k = p; k <= r; k++) {
+            if (L[i] <= R[j]) {
+                A[k] = L[i];
+                i++;
+            } else {
+                A[k] = R[j];
+                j++;
+                count += n1 - i;
+            }
+        }
+        return count;
+    }
 }
