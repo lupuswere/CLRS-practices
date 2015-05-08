@@ -19,6 +19,8 @@ public class SearchTest {
     int lengthOfA = 100;
     int countOfAs = 100;
     int rangeOfAs = 200;
+    int startOfAs = 100;
+    int gapOfAs = 10;
     @Before
     public void setUp() throws Exception {
         Random rd = new Random();
@@ -28,13 +30,17 @@ public class SearchTest {
         for(int i = 0; i < this.countOfAs; i++) {
             int[] A = this.As[i];
             for(int j = 0; j < this.lengthOfA; j++) {
-                A[j] = rd.nextInt(this.rangeOfAs) - 100; // Range (-100, 100)
+                if(j == 0) {
+                    A[j] = rd.nextInt(this.startOfAs) - 100; // range(-100, 0);
+                } else {
+                    A[j] = A[j - 1] + rd.nextInt(gapOfAs) + 1;
+                }
             }
             Arrays.sort(A);
             int indexToBeReturned = rd.nextInt(this.lengthOfA / 3 + this.lengthOfA);
             if (indexToBeReturned >= this.lengthOfA) {
                 this.expectedIndices[i] = -1;
-                this.targets[i] = this.rangeOfAs + 2;
+                this.targets[i] = A[0] - 1;
             } else {
                 this.expectedIndices[i] = indexToBeReturned;
                 this.targets[i] = A[indexToBeReturned];
@@ -45,14 +51,24 @@ public class SearchTest {
     @Test
     public void testBinarySearchIterative() throws Exception {
         for (int i = 0; i < countOfAs; i++) {
-            assertEquals(this.expectedIndices[i], Search.binarySearch(this.As[i], this.targets[i], false));
+            int actual =  Search.binarySearch(this.As[i], this.targets[i], false);
+            assertEquals(this.expectedIndices[i], actual);
         }
     }
 
     @Test
     public void testBinarySearchRecursive() throws Exception {
         for (int i = 0; i < countOfAs; i++) {
-            assertEquals(this.expectedIndices[i], Search.binarySearch(this.As[i], this.targets[i], true));
+            int actual = Search.binarySearch(this.As[i], this.targets[i], true);
+            assertEquals(this.expectedIndices[i], actual);
+        }
+    }
+
+    @Test
+    public void testRandomSearch() throws Exception {
+        for (int i = 0; i < countOfAs; i++) {
+            int actual = Search.randomSearch(this.As[i], this.targets[i]);
+            assertEquals(this.expectedIndices[i], actual);
         }
     }
 }

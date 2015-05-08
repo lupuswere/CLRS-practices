@@ -1,5 +1,7 @@
 package net.lilifei.basic;
 
+import java.util.Random;
+
 /**
  * Created by Lifei on 15/5/7.
  */
@@ -39,7 +41,8 @@ public class Search {
             } else {
                 return middle;
             }
-        };
+        }
+        ;
         return -1;
     }
 
@@ -64,7 +67,7 @@ public class Search {
      * @return : the index of the target, if not in the array, return -1
      */
     private static int binarySearchRecursive(int[] A, int target, int start, int end) {
-        if(start <= end) {
+        if (start <= end) {
             int middle = (start + end) / 2;
             if (target > A[middle]) {
                 return binarySearchRecursive(A, target, middle + 1, end);
@@ -73,6 +76,35 @@ public class Search {
             } else {
                 return middle;
             }
+        }
+        return -1;
+    }
+
+    /**
+     * 5-2 : Search in unsorted array
+     *
+     * @param A      : the array
+     * @param target : the number to be searched for
+     * @return : the index of the number, if not in the array, return -1
+     */
+    public static int randomSearch(int[] A, int target) {
+        if (A == null || A.length == 0) {
+            return -1;
+        }
+        int lenA = A.length;
+        boolean[] indices = new boolean[lenA];
+        int searchedIndices = 0;
+        Random rd = new Random();
+        while (searchedIndices < lenA) {
+            int index = rd.nextInt(lenA);
+            while(indices[index]) {
+                index = rd.nextInt(lenA);
+            }
+            searchedIndices++;
+            if(target == A[index]) {
+                return index;
+            }
+            indices[index] = true;
         }
         return -1;
     }
