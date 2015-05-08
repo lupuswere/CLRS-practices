@@ -78,4 +78,13 @@ public class SortTest{
             assertArrayEquals(this.expecteds[i], this.beforeSorted[i]);
         }
     }
+
+    @Test
+    public void testTwoSum() throws Exception {
+        int[] testCase = {9, 8, -22, 0, 39, 11, -5, 27};
+        int target1 = -14;
+        int target2 = -97;
+        assertTrue(Sort.twoSum(testCase, target1));
+        assertTrue(!Sort.twoSum(testCase, target2));
+    }
 }

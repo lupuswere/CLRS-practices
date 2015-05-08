@@ -1,5 +1,7 @@
 package net.lilifei.basic;
 
+import java.util.Arrays;
+
 /**
  * Created by Lifei on 15/5/5.
  */
@@ -202,5 +204,32 @@ public class Sort {
             i--;
         }
         A[i + 1] = key;
+    }
+
+    /**
+     * 2.3-7 : Two Sum
+     *
+     * @param A      : the set of Integer
+     * @param target : the sum of two Integers
+     * @return : whether there are two Integers whose sum is the target
+     */
+    public static boolean twoSum(int[] A, int target) {
+        if (A == null || A.length == 0) {
+            return false;
+        }
+        Arrays.sort(A); // O(nlogn)
+        int start = 0;
+        int end = A.length - 1;
+        while (start < end) {
+            int sum = A[start] + A[end];
+            if (sum > target) {
+                end--;
+            } else if (sum < target) {
+                start++;
+            } else {
+                return true;
+            }
+        }
+        return false;
     }
 }
