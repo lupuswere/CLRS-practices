@@ -12,13 +12,13 @@ public class RandomAlgorithm {
      * @param A : the original array
      * @return : the new permutation
      */
-    public static Object[] permuteWithoutIdentity(Object[] A) {
-        Object[] ans = Arrays.copyOf(A, A.length);
+    public static <T extends Object> T[] permuteWithoutIdentity(T[] A) {
+        T[] ans = Arrays.copyOf(A, A.length);
         java.util.Random rd = new java.util.Random();
         int len = ans.length;
         for(int i = 0; i < len; i++) {
             int index = rd.nextInt(len - i) + i;
-            Object tmp = A[i];
+            T tmp = A[i];
             A[i] = A[index];
             A[index] = tmp;
         }
