@@ -38,23 +38,24 @@ public class HeapTest {
     @Test
     public void testMaxHeapify() throws Exception {
         int[] beforeInt = {4, 15, 9, 6, 7, 5, 7};
-        int[] expectedInt = {15, 6, 9, 4, 7, 5, 7};
+        int[] expectedInt = {15, 7, 9, 6, 4, 5, 7};
         ForTest[] before = new ForTest[7];
         ForTest[] expected = new ForTest[7];
         for (int i = 0; i < 7; i++) {
             before[i] = new ForTest(beforeInt[i]);
             expected[i] = new ForTest(expectedInt[i]);
         }
-        Heap.minHeapify(before, 0, 7);
-        assertTrue(Arrays.equals(before, expected));
-
+        Heap.maxHeapify(before, 0, 7);
+        for (int i = 0; i < 7; i++) {
+            assertTrue(expected[i].equals(before[i]));
+        }
     }
 
     @Test
     public void testMaxHeapify1() throws Exception {
         int[] beforeInt = {4, 15, 9, 6, 7, 5, 7};
-        int[] expectedInt = {15, 6, 9, 4, 7, 5, 7};
-        Heap.minHeapify(beforeInt, 0, 7);
+        int[] expectedInt = {15, 7, 9, 6, 4, 5, 7};
+        Heap.maxHeapify(beforeInt, 0, 7);
         assertArrayEquals(expectedInt, beforeInt);
     }
 
@@ -68,38 +69,41 @@ public class HeapTest {
             before[i] = new ForTest(beforeInt[i]);
             expected[i] = new ForTest(expectedInt[i]);
         }
-        Heap.maxHeapify(before, 0, 7);
-        assertArrayEquals(expected, before);
-
+        Heap.minHeapify(before, 0, 7);
+        for (int i = 0; i < 7; i++) {
+            assertTrue(expected[i].equals(before[i]));
+        }
     }
 
     @Test
     public void testMinHeapify1() throws Exception {
         int[] beforeInt = {16, 8, 11, 11, 12, 18, 12};
         int[] expectedInt = {8, 11, 11, 16, 12, 18, 12};
-        Heap.maxHeapify(beforeInt, 0, 7);
+        Heap.minHeapify(beforeInt, 0, 7);
         assertArrayEquals(expectedInt, beforeInt);
     }
 
     @Test
     public void testMaxHeapifyIterative() throws Exception {
         int[] beforeInt = {4, 15, 9, 6, 7, 5, 7};
-        int[] expectedInt = {15, 6, 9, 4, 7, 5, 7};
+        int[] expectedInt = {15, 7, 9, 6, 4, 5, 7};
         ForTest[] before = new ForTest[7];
         ForTest[] expected = new ForTest[7];
         for (int i = 0; i < 7; i++) {
             before[i] = new ForTest(beforeInt[i]);
             expected[i] = new ForTest(expectedInt[i]);
         }
-        Heap.minHeapify(before, 0, 7);
-        assertArrayEquals(expected, before);
+        Heap.maxHeapify(before, 0, 7);
+        for (int i = 0; i < 7; i++) {
+            assertTrue(expected[i].equals(before[i]));
+        }
     }
 
     @Test
     public void testMaxHeapifyIterative1() throws Exception {
         int[] beforeInt = {4, 15, 9, 6, 7, 5, 7};
-        int[] expectedInt = {15, 6, 9, 4, 7, 5, 7};
-        Heap.minHeapify(beforeInt, 0, 7);
+        int[] expectedInt = {15, 7, 9, 6, 4, 5, 7};
+        Heap.maxHeapify(beforeInt, 0, 7);
         assertArrayEquals(expectedInt, beforeInt);
     }
 }
@@ -121,6 +125,6 @@ class ForTest implements Comparable<ForTest> {
     }
 
     public boolean equals(ForTest o) {
-        return super.equals(this.getValue() == o.getValue());
+        return this.getValue() == o.getValue();
     }
 }

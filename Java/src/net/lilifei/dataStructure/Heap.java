@@ -47,19 +47,19 @@ public class Heap {
         int l = left(i);
         int r = right(i);
         int largest = l;
-        if (l <= heapSize && (A[l].compareTo(A[i]) > 0)) {
+        if (l < heapSize && (A[l].compareTo(A[i]) > 0)) {
             largest = l;
         } else {
             largest = i;
         }
-        if (r <= heapSize && ((A[r].compareTo(A[largest]) > 0))) {
+        if (r < heapSize && ((A[r].compareTo(A[largest]) > 0))) {
             largest = r;
         }
         if (largest != i) {
             T tmp = A[largest];
             A[largest] = A[i];
             A[i] = tmp;
-            maxHeapify(A, i, heapSize);
+            maxHeapify(A, largest, heapSize);
         }
     }
 
@@ -74,12 +74,12 @@ public class Heap {
         int l = left(i);
         int r = right(i);
         int largest = l;
-        if (l <= heapSize && A[l] > A[i]) {
+        if (l < heapSize && A[l] > A[i]) {
             largest = l;
         } else {
             largest = i;
         }
-        if (r <= heapSize && A[r] > A[largest]) {
+        if (r < heapSize && A[r] > A[largest]) {
             largest = r;
         }
         if (largest != i) {
@@ -101,19 +101,19 @@ public class Heap {
         int l = left(i);
         int r = right(i);
         int smallest = l;
-        if (l <= heapSize && (A[l].compareTo(A[i]) < 0)) {
+        if (l < heapSize && (A[l].compareTo(A[i]) < 0)) {
             smallest = l;
         } else {
             smallest = i;
         }
-        if (r <= heapSize && ((A[r].compareTo(A[smallest]) < 0))) {
+        if (r < heapSize && ((A[r].compareTo(A[smallest]) < 0))) {
             smallest = r;
         }
         if (smallest != i) {
             T tmp = A[smallest];
             A[smallest] = A[i];
             A[i] = tmp;
-            minHeapify(A, i, heapSize);
+            minHeapify(A, smallest, heapSize);
         }
     }
 
@@ -128,12 +128,12 @@ public class Heap {
         int l = left(i);
         int r = right(i);
         int smallest = l;
-        if (l <= heapSize && A[l] < A[i]) {
+        if (l < heapSize && A[l] < A[i]) {
             smallest = l;
         } else {
             smallest = i;
         }
-        if (r <= heapSize && A[r] < A[smallest]) {
+        if (r < heapSize && A[r] < A[smallest]) {
             smallest = r;
         }
         if (smallest != i) {
@@ -157,12 +157,12 @@ public class Heap {
             int l = left(index);
             int r = right(index);
             int largest = l;
-            if (l <= heapSize && (A[l].compareTo(A[index]) > 0)) {
+            if (l < heapSize && (A[l].compareTo(A[index]) > 0)) {
                 largest = l;
             } else {
                 largest = index;
             }
-            if (r <= heapSize && (A[r].compareTo(A[largest]) > 0)) {
+            if (r < heapSize && (A[r].compareTo(A[largest]) > 0)) {
                 largest = r;
             }
             if (largest != i) {
@@ -189,12 +189,12 @@ public class Heap {
             int l = left(index);
             int r = right(index);
             int largest = l;
-            if (l <= heapSize && A[l] > A[index]) {
+            if (l < heapSize && A[l] > A[index]) {
                 largest = l;
             } else {
                 largest = index;
             }
-            if (r <= heapSize && A[r] > A[largest]) {
+            if (r < heapSize && A[r] > A[largest]) {
                 largest = r;
             }
             if (largest != i) {
