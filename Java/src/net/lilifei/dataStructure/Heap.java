@@ -336,8 +336,9 @@ public class Heap {
     /**
      * 6.5 : HEAP-MAXIMUM
      *
-     * @param A   : an array
-     * @param <T> : a class that implemented Comparable interface
+     * @param A        : an array
+     * @param heapSize : the size of the heap
+     * @param <T>      : a class that implemented Comparable interface
      * @return : the maximum of the max heap
      */
     public static <T extends Comparable<? super T>> T heapMaximum(T[] A, int heapSize) throws Exception {
@@ -351,7 +352,8 @@ public class Heap {
     /**
      * 6.5 : HEAP-MAXIMUM
      *
-     * @param A : an array
+     * @param A        : an array
+     * @param heapSize : the size of the heap
      * @return : the maximum of the max heap
      */
     public static int heapMaximum(int[] A, int heapSize) throws Exception {
@@ -421,13 +423,117 @@ public class Heap {
 
     /**
      * 6.5 : MAX-HEAP-INSERT
-     * @param A : the max heap
-     * @param key : the new key
+     *
+     * @param A        : the max heap
+     * @param key      : the new key
      * @param heapSize : the size of the heap
      */
     public static void maxHeapInsert(int[] A, int key, int heapSize) throws Exception {
         heapSize++;
         A[heapSize - 1] = Integer.MIN_VALUE;
         heapIncreaseKey(A, heapSize - 1, key);
+    }
+
+    /**
+     * 6.5-3 : HEAP-MINIMUM
+     *
+     * @param A        : the min heap
+     * @param heapSize : the size of the heap
+     * @param <T>      : a class that implements Comparable interface
+     * @return : the minimum of the heap
+     * @throws Exception
+     */
+    public static <T extends Comparable<? super T>> T heapMinimum(T[] A, int heapSize) throws Exception {
+        if (isMinHeap(A, heapSize)) {
+            return A[0];
+        } else {
+            throw new Exception("Not Min Heap");
+        }
+    }
+
+    /**
+     * 6.5-3 : HEAP-MINIMUM
+     *
+     * @param A        : the min heap
+     * @param heapSize : the size of the heap
+     * @return : the minimum of the heap
+     * @throws Exception
+     */
+    public static int heapMinimum(int[] A, int heapSize) throws Exception {
+        if (isMinHeap(A, heapSize)) {
+            return A[0];
+        } else {
+            throw new Exception("Not Min Heap");
+        }
+    }
+
+    /**
+     * 6.5-3 : HEAP-EXTRACT-MIN, Delete and return the minimum element in the heap
+     *
+     * @param A        : a min heap
+     * @param heapSize : the size of the heap
+     * @param <T>      : a class that implements Comparable interface
+     * @return : the minimum element
+     * @throws Exception
+     */
+    public static <T extends Comparable<? super T>> T heapExtractMin(T[] A, int heapSize) throws Exception {
+        if (heapSize < 1) {
+            throw new Exception("Heap underflow");
+        }
+        T min = A[0];
+        A[0] = A[heapSize - 1];
+        minHeapify(A, 0, --heapSize);
+        return min;
+    }
+
+    /**
+     * 6.5-3 : HEAP-EXTRACT-MIN, Delete and return the minimum Integer in the heap
+     *
+     * @param A        : a min heap
+     * @param heapSize : the size of the heap
+     * @return : the minimum Integer
+     * @throws Exception
+     */
+    public static int heapExtractMin(int[] A, int heapSize) throws Exception {
+        if (heapSize < 1) {
+            throw new Exception("Heap underflow");
+        }
+        int min = A[0];
+        A[0] = A[heapSize - 1];
+        minHeapify(A, 0, --heapSize);
+        return min;
+    }
+
+    /**
+     * 6.5-3 : HEAP-DECREASE-KEY, decrease one of the key and keep min heap
+     *
+     * @param A   : a min heap
+     * @param i   : the index of the key needs to be updated
+     * @param key : the new key
+     */
+    public static void heapDecreaseKey(int[] A, int i, int key) throws Exception {
+        if (key > A[i]) {
+            throw new Exception("New key is bigger than current key");
+        }
+        A[i] = key;
+        while ((i > 0) && (A[parent(i)] > A[i])) {
+            int tmp = A[i];
+            A[i] = A[parent(i)];
+            A[parent(i)] = tmp;
+            i = parent(i);
+        }
+    }
+
+    /**
+     * 6.5-3 : MIN-HEAP-INSERT
+     *
+     * @param A        : the min heap
+     * @param key      : the new key
+     * @param heapSize : the size of the heap
+     */
+    public static void minHeapInsert(int[] A, int key, int heapSize) throws Exception {
+        heapSize++;
+        A[heapSize - 1] = Integer.MAX_VALUE;
+        heapDecreaseKey(A, heapSize - 1, key);
     }
 }

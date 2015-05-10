@@ -205,6 +205,35 @@ public class HeapTest {
         Heap.maxHeapInsert(testCase, 16, 7);
         assertTrue(Heap.heapMaximum(testCase, 8) == 16 && Heap.isMaxHeap(testCase, 8));
     }
+
+    @Test
+    public void testHeapExtractMin() throws Exception {
+        int[] tmp = {8, 11, 11, 16, 12, 18, 12};
+        ForTest[] testCase = ForTest.turn(tmp);
+        ForTest min = Heap.heapExtractMin(testCase, 7);
+        assertTrue(min.getValue() == 8 && Heap.isMinHeap(testCase, 7));
+    }
+
+    @Test
+    public void testHeapExtractMin1() throws Exception {
+        int[] testCase = {8, 11, 11, 16, 12, 18, 12};
+        int min = Heap.heapExtractMin(testCase, 7);
+        assertTrue(min == 8 && Heap.isMinHeap(testCase, 7));
+    }
+
+    @Test
+    public void testHeapDecreaseKey() throws Exception {
+        int[] testCase = {8, 11, 11, 16, 12, 18, 12};
+        Heap.heapDecreaseKey(testCase, 3, 7);
+        assertTrue(Heap.isMinHeap(testCase, 7));
+    }
+
+    @Test
+    public void testMinHeapInsert() throws Exception {
+        int[] testCase = {8, 11, 11, 16, 12, 18, 12, 0};
+        Heap.minHeapInsert(testCase, 7, 7);
+        assertTrue(Heap.heapMinimum(testCase, 8) == 7 && Heap.isMinHeap(testCase, 8));
+    }
 }
 
 class ForTest implements Comparable<ForTest> {
