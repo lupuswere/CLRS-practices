@@ -332,4 +332,27 @@ public class Heap {
         }
         return true;
     }
+
+    /**
+     * 6.5 : HEAP-MAXIMUM
+     *
+     * @param A   : an array
+     * @param <T> : a class that implemented Comparable interface
+     * @return : the maximum of the max heap
+     */
+    public static <T extends Comparable<? super T>> T heapMaximum(T[] A) {
+        return A[0];
+    }
+
+    /**
+     * 6.5 : HEAP-MAXIMUM
+     *
+     * @param A   : an array
+     * @return : the maximum of the max heap
+     */
+    public static int heapMaximum(int[] A) {
+        return A[0];
+    }
+
+
 }

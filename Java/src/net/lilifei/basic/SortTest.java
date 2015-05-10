@@ -107,4 +107,12 @@ public class SortTest {
             assertEquals(expected, actual);
         }
     }
+
+    @Test
+    public void testHeapSort() throws Exception {
+        for (int i = 0; i < this.beforeSorted.length; i++) {
+            Sort.heapSort(this.beforeSorted[i]);
+            assertArrayEquals(this.expecteds[i], this.beforeSorted[i]);
+        }
+    }
 }

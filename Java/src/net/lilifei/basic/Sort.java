@@ -1,6 +1,10 @@
 package net.lilifei.basic;
 
+import net.lilifei.dataStructure.Heap;
+
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * Created by Lifei on 15/5/5.
@@ -294,5 +298,26 @@ public class Sort {
             }
         }
         return count;
+    }
+
+    /**
+     * 6.4 : Heap Sort
+     *
+     * @param A : the array of Integer that is to be sorted
+     */
+    public static void heapSort(int[] A) {
+        if (A == null || A.length == 0) {
+            return;
+        }
+        int lenA = A.length;
+        Heap.buildMaxHeap(A);
+        int heapSize = lenA;
+        for (int i = lenA - 1; i >= 1; i--) {
+            int tmp = A[0];
+            A[0] = A[i];
+            A[i] = tmp;
+            heapSize--;
+            Heap.maxHeapify(A, 0, heapSize);
+        }
     }
 }
