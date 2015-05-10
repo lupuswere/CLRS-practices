@@ -165,7 +165,7 @@ public class Heap {
             if (r < heapSize && (A[r].compareTo(A[largest]) > 0)) {
                 largest = r;
             }
-            if (largest != i) {
+            if (largest != index) {
                 T tmp = A[largest];
                 A[largest] = A[index];
                 A[index] = tmp;
@@ -197,7 +197,7 @@ public class Heap {
             if (r < heapSize && A[r] > A[largest]) {
                 largest = r;
             }
-            if (largest != i) {
+            if (largest != index) {
                 int tmp = A[largest];
                 A[largest] = A[index];
                 A[index] = tmp;
@@ -340,19 +340,94 @@ public class Heap {
      * @param <T> : a class that implemented Comparable interface
      * @return : the maximum of the max heap
      */
-    public static <T extends Comparable<? super T>> T heapMaximum(T[] A) {
-        return A[0];
+    public static <T extends Comparable<? super T>> T heapMaximum(T[] A, int heapSize) throws Exception {
+        if (A != null && isMaxHeap(A, heapSize)) {
+            return A[0];
+        } else {
+            throw new Exception("Not Max Heap");
+        }
     }
 
     /**
      * 6.5 : HEAP-MAXIMUM
      *
-     * @param A   : an array
+     * @param A : an array
      * @return : the maximum of the max heap
      */
-    public static int heapMaximum(int[] A) {
-        return A[0];
+    public static int heapMaximum(int[] A, int heapSize) throws Exception {
+        if (A != null && isMaxHeap(A, heapSize)) {
+            return A[0];
+        } else {
+            throw new Exception("Not Max Heap");
+        }
     }
 
+    /**
+     * 6.5 : HEAP-EXTRACT-MAX, Delete and return the maximum element in the heap
+     *
+     * @param A        : a max heap
+     * @param heapSize : the size of the heap
+     * @param <T>      : a class that implements Comparable interface
+     * @return : the maximum element
+     * @throws Exception
+     */
+    public static <T extends Comparable<? super T>> T heapExtractMax(T[] A, int heapSize) throws Exception {
+        if (heapSize < 1) {
+            throw new Exception("Heap underflow");
+        }
+        T max = A[0];
+        A[0] = A[heapSize - 1];
+        Heap.maxHeapify(A, 0, --heapSize);
+        return max;
+    }
 
+    /**
+     * 6.5 : HEAP-EXTRACT-MAX, Delete and return the maximum Integer in the heap
+     *
+     * @param A        : a max heap
+     * @param heapSize : the size of the heap
+     * @return : the maximum Integer
+     * @throws Exception
+     */
+    public static int heapExtractMax(int[] A, int heapSize) throws Exception {
+        if (heapSize < 1) {
+            throw new Exception("Heap underflow");
+        }
+        int max = A[0];
+        A[0] = A[heapSize - 1];
+        Heap.maxHeapify(A, 0, --heapSize);
+        return max;
+    }
+
+    /**
+     * 6.5 : HEAP-INCREASE-KEY, increase one of the key and keep max heap
+     *
+     * @param A   : a max heap
+     * @param i   : the index of the key needs to be updated
+     * @param key : the new key
+     */
+    public static void heapIncreaseKey(int[] A, int i, int key) throws Exception {
+        if (key < A[i]) {
+            throw new Exception("New key is smaller than current key");
+        }
+        A[i] = key;
+        while ((i > 0) && (A[parent(i)] < A[i])) {
+            int tmp = A[i];
+            A[i] = A[parent(i)];
+            A[parent(i)] = tmp;
+            i = parent(i);
+        }
+    }
+
+    /**
+     * 6.5 : MAX-HEAP-INSERT
+     * @param A : the max heap
+     * @param key : the new key
+     * @param heapSize : the size of the heap
+     */
+    public static void maxHeapInsert(int[] A, int key, int heapSize) throws Exception {
+        heapSize++;
+        A[heapSize - 1] = Integer.MIN_VALUE;
+        heapIncreaseKey(A, heapSize - 1, key);
+    }
 }

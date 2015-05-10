@@ -94,7 +94,7 @@ public class HeapTest {
             before[i] = new ForTest(beforeInt[i]);
             expected[i] = new ForTest(expectedInt[i]);
         }
-        Heap.maxHeapify(before, 0, 7);
+        Heap.maxHeapifyIterative(before, 0, 7);
         for (int i = 0; i < 7; i++) {
             assertTrue(expected[i].equals(before[i]));
         }
@@ -104,7 +104,7 @@ public class HeapTest {
     public void testMaxHeapifyIterative1() throws Exception {
         int[] beforeInt = {4, 15, 9, 6, 7, 5, 7};
         int[] expectedInt = {15, 7, 9, 6, 4, 5, 7};
-        Heap.maxHeapify(beforeInt, 0, 7);
+        Heap.maxHeapifyIterative(beforeInt, 0, 7);
         assertArrayEquals(expectedInt, beforeInt);
     }
 
@@ -175,6 +175,35 @@ public class HeapTest {
         int[] testCase2 = {8, 11, 11, 16, 12, 18, 12};
         assertTrue(!Heap.isMinHeap(testCase1, 7));
         assertTrue(Heap.isMinHeap(testCase2, 7));
+    }
+
+    @Test
+    public void testHeapExtractMax() throws Exception {
+        int[] tmp = {15, 7, 9, 6, 4, 5, 7};
+        ForTest[] testCase = ForTest.turn(tmp);
+        ForTest max = Heap.heapExtractMax(testCase, 7);
+        assertTrue(max.getValue() == 15 && Heap.isMaxHeap(testCase, 7));
+    }
+
+    @Test
+    public void testHeapExtractMax1() throws Exception {
+        int[] testCase = {15, 7, 9, 6, 4, 5, 7};
+        int max = Heap.heapExtractMax(testCase, 7);
+        assertTrue(max == 15 && Heap.isMaxHeap(testCase, 7));
+    }
+
+    @Test
+    public void testHeapIncreaseKey() throws Exception {
+        int[] testCase = {15, 7, 9, 6, 4, 5, 7};
+        Heap.heapIncreaseKey(testCase, 3, 10);
+        assertTrue(Heap.isMaxHeap(testCase, 7));
+    }
+
+    @Test
+    public void testMaxHeapInsert() throws Exception {
+        int[] testCase = {15, 7, 9, 6, 4, 5, 7, 0};
+        Heap.maxHeapInsert(testCase, 16, 7);
+        assertTrue(Heap.heapMaximum(testCase, 8) == 16 && Heap.isMaxHeap(testCase, 8));
     }
 }
 
