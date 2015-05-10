@@ -3,6 +3,7 @@ package net.lilifei.dataStructure;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Random;
 
 import static org.junit.Assert.*;
 
@@ -106,6 +107,75 @@ public class HeapTest {
         Heap.maxHeapify(beforeInt, 0, 7);
         assertArrayEquals(expectedInt, beforeInt);
     }
+
+    @Test
+    public void testBuildMaxHeap() throws Exception {
+        int countOfTestCases = 10;
+        int lengthOfTestCase = 100;
+        int rangeOfTestCase = 100;
+        Random rd = new Random();
+        for (int i = 0; i < countOfTestCases; i++) {
+            int[] tmpTestCase = new int[lengthOfTestCase];
+            for (int j = 0; j < lengthOfTestCase; j++) {
+                tmpTestCase[j] = rd.nextInt(rangeOfTestCase);
+            }
+            ForTest[] testCase = ForTest.turn(tmpTestCase);
+            Heap.buildMaxHeap(testCase);
+            assertTrue(Heap.isMaxHeap(testCase, lengthOfTestCase));
+        }
+    }
+
+    @Test
+    public void testBuildMaxHeap1() throws Exception {
+        int countOfTestCases = 10;
+        int lengthOfTestCase = 100;
+        int rangeOfTestCase = 100;
+        Random rd = new Random();
+        for (int i = 0; i < countOfTestCases; i++) {
+            int[] testCase = new int[lengthOfTestCase];
+            for (int j = 0; j < lengthOfTestCase; j++) {
+                testCase[j] = rd.nextInt(rangeOfTestCase);
+            }
+            Heap.buildMaxHeap(testCase);
+            assertTrue(Heap.isMaxHeap(testCase, lengthOfTestCase));
+        }
+    }
+
+    @Test
+    public void testIsMaxHeap() throws Exception {
+        int[] tmp1 = {4, 15, 9, 6, 7, 5, 7};
+        int[] tmp2 = {15, 7, 9, 6, 4, 5, 7};
+        ForTest[] testCase1 = ForTest.turn(tmp1);
+        ForTest[] testCase2 = ForTest.turn(tmp2);
+        assertTrue(!Heap.isMaxHeap(testCase1, 7));
+        assertTrue(Heap.isMaxHeap(testCase2, 7));
+    }
+
+    @Test
+    public void testIsMaxHeap1() throws Exception {
+        int[] testCase1 = {4, 15, 9, 6, 7, 5, 7};
+        int[] testCase2 = {15, 7, 9, 6, 4, 5, 7};
+        assertTrue(!Heap.isMaxHeap(testCase1, 7));
+        assertTrue(Heap.isMaxHeap(testCase2, 7));
+    }
+
+    @Test
+    public void testIsMinHeap() throws Exception {
+        int[] tmp1 = {16, 8, 11, 11, 12, 18, 12};
+        int[] tmp2 = {8, 11, 11, 16, 12, 18, 12};
+        ForTest[] testCase1 = ForTest.turn(tmp1);
+        ForTest[] testCase2 = ForTest.turn(tmp2);
+        assertTrue(!Heap.isMinHeap(testCase1, 7));
+        assertTrue(Heap.isMinHeap(testCase2, 7));
+    }
+
+    @Test
+    public void testIsMinHeap1() throws Exception {
+        int[] testCase1 = {16, 8, 11, 11, 12, 18, 12};
+        int[] testCase2 = {8, 11, 11, 16, 12, 18, 12};
+        assertTrue(!Heap.isMinHeap(testCase1, 7));
+        assertTrue(Heap.isMinHeap(testCase2, 7));
+    }
 }
 
 class ForTest implements Comparable<ForTest> {
@@ -126,5 +196,17 @@ class ForTest implements Comparable<ForTest> {
 
     public boolean equals(ForTest o) {
         return this.getValue() == o.getValue();
+    }
+
+    public static ForTest[] turn(int[] A) {
+        if (A == null || A.length == 0) {
+            return null;
+        }
+        int lenA = A.length;
+        ForTest[] res = new ForTest[lenA];
+        for (int i = 0; i < lenA; i++) {
+            res[i] = new ForTest(A[i]);
+        }
+        return res;
     }
 }

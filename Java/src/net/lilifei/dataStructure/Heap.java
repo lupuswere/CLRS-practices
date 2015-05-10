@@ -153,7 +153,7 @@ public class Heap {
      */
     public static <T extends Comparable<? super T>> void maxHeapifyIterative(T[] A, int i, int heapSize) {
         int index = i;
-        while(true) {
+        while (true) {
             int l = left(index);
             int r = right(index);
             int largest = l;
@@ -185,7 +185,7 @@ public class Heap {
      */
     public static void maxHeapifyIterative(int[] A, int i, int heapSize) {
         int index = i;
-        while(true) {
+        while (true) {
             int l = left(index);
             int r = right(index);
             int largest = l;
@@ -209,4 +209,127 @@ public class Heap {
 
     }
 
+    /**
+     * Make an array a max heap
+     *
+     * @param A : the array
+     */
+    public static <T extends Comparable<? super T>> void buildMaxHeap(T[] A) {
+        if (A == null || A.length == 0) {
+            return;
+        }
+        int lenA = A.length;
+        int heapSize = lenA;
+        for (int i = lenA / 2; i >= 0; i--) {
+            maxHeapify(A, i, heapSize);
+        }
+    }
+
+    /**
+     * Make an array a max heap
+     *
+     * @param A : the array
+     */
+    public static void buildMaxHeap(int[] A) {
+        if (A == null || A.length == 0) {
+            return;
+        }
+        int lenA = A.length;
+        int heapSize = lenA;
+        for (int i = lenA / 2; i >= 0; i--) {
+            maxHeapify(A, i, heapSize);
+        }
+    }
+
+    /**
+     * Helper function to check the max heap
+     *
+     * @param A        : the array
+     * @param heapSize : the size of the heap
+     * @return : whether the chosen range of the array is max heap or not
+     */
+    public static <T extends Comparable<? super T>> boolean isMaxHeap(T[] A, int heapSize) {
+        if (A == null || heapSize > A.length) {
+            return false;
+        }
+        if (A.length < 2) {
+            return true;
+        }
+        for (int i = 1; i < heapSize; i++) {
+            int parent = parent(i);
+            if (A[parent].compareTo(A[i]) < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Helper function to check the max heap
+     *
+     * @param A        : the array
+     * @param heapSize : the size of the heap
+     * @return : whether the chosen range of the array is max heap or not
+     */
+    public static boolean isMaxHeap(int[] A, int heapSize) {
+        if (A == null || heapSize > A.length) {
+            return false;
+        }
+        if (A.length < 2) {
+            return true;
+        }
+        for (int i = 1; i < heapSize; i++) {
+            int parent = parent(i);
+            if (A[parent] < A[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Helper function to check the min heap
+     *
+     * @param A        : the array
+     * @param heapSize : the size of the heap
+     * @return : whether the chosen range of the array is min heap or not
+     */
+    public static <T extends Comparable<? super T>> boolean isMinHeap(T[] A, int heapSize) {
+        if (A == null || heapSize > A.length) {
+            return false;
+        }
+        if (A.length < 2) {
+            return true;
+        }
+        for (int i = 1; i < heapSize; i++) {
+            int parent = parent(i);
+            if (A[parent].compareTo(A[i]) > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Helper function to check the min heap
+     *
+     * @param A        : the array
+     * @param heapSize : the size of the heap
+     * @return : whether the chosen range of the array is min heap or not
+     */
+    public static boolean isMinHeap(int[] A, int heapSize) {
+        if (A == null || heapSize > A.length) {
+            return false;
+        }
+        if (A.length < 2) {
+            return true;
+        }
+        for (int i = 1; i < heapSize; i++) {
+            int parent = parent(i);
+            if (A[parent] > A[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
