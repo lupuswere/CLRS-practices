@@ -3,9 +3,9 @@ package net.lilifei.dataStructure;
 /**
  * Created by Lifei on 15/5/10.
  */
-public class LinkedListNode {
-    int val;
-    LinkedListNode next;
+public class LinkedListNode implements Comparable<LinkedListNode> {
+    public int val;
+    public LinkedListNode next;
 
     public LinkedListNode() {
         this.val = 0;
@@ -13,6 +13,11 @@ public class LinkedListNode {
 
     public LinkedListNode(int val) {
         this.val = val;
+    }
+
+    @Override
+    public int compareTo(LinkedListNode o) {
+        return this.val - o.val;
     }
 
     public static LinkedListNode generateLinkedList(int[] list) {

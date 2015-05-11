@@ -1,6 +1,7 @@
 package net.lilifei.dataStructure;
 
 import java.util.Comparator;
+import java.util.LinkedList;
 
 /**
  * Created by Lifei on 15/5/8.
@@ -238,6 +239,38 @@ public class Heap {
         int heapSize = lenA;
         for (int i = lenA / 2; i >= 0; i--) {
             maxHeapify(A, i, heapSize);
+        }
+    }
+
+    /**
+     * Make an array a min heap
+     *
+     * @param A : the array
+     */
+    public static <T extends Comparable<? super T>> void buildMinHeap(T[] A) {
+        if (A == null || A.length == 0) {
+            return;
+        }
+        int lenA = A.length;
+        int heapSize = lenA;
+        for (int i = lenA / 2; i >= 0; i--) {
+            minHeapify(A, i, heapSize);
+        }
+    }
+
+    /**
+     * Make an array a min heap
+     *
+     * @param A : the array
+     */
+    public static void buildMinHeap(int[] A) {
+        if (A == null || A.length == 0) {
+            return;
+        }
+        int lenA = A.length;
+        int heapSize = lenA;
+        for (int i = lenA / 2; i >= 0; i--) {
+            minHeapify(A, i, heapSize);
         }
     }
 
@@ -524,6 +557,20 @@ public class Heap {
         }
     }
 
+    //For 6.5-8
+    public static void heapDecreaseKey(LinkedListNode[] A, int i, LinkedListNode key) throws Exception {
+        if (key.compareTo(A[i]) > 0) {
+            throw new Exception("New key is bigger than current key");
+        }
+        A[i] = key;
+        while ((i > 0) && (A[parent(i)].compareTo(A[i]) > 0)) {
+            LinkedListNode tmp = A[i];
+            A[i] = A[parent(i)];
+            A[parent(i)] = tmp;
+            i = parent(i);
+        }
+    }
+
     /**
      * 6.5-3 : MIN-HEAP-INSERT
      *
@@ -535,5 +582,29 @@ public class Heap {
         heapSize++;
         A[heapSize - 1] = Integer.MAX_VALUE;
         heapDecreaseKey(A, heapSize - 1, key);
+    }
+
+    //For 6.5-8
+    public static void minHeapInsert(LinkedListNode[] A, LinkedListNode key, int heapSize) throws Exception {
+        heapSize++;
+        if(heapSize <= 0) {
+            return;
+        }
+        A[heapSize - 1] = new LinkedListNode(Integer.MAX_VALUE);
+        heapDecreaseKey(A, heapSize - 1, key);
+    }
+
+    /**
+     * 6.5-7 : HEAP-DELETE
+     *
+     * @param A : the max heap
+     * @param i : the index of the element to be deleted
+     */
+    public static void maxHeapDelete(int[] A, int i, int heapSize) throws Exception {
+        if (A == null || !isMaxHeap(A, heapSize)) {
+            throw new Exception("Not A Max Heap");
+        }
+        heapIncreaseKey(A, i, Integer.MAX_VALUE); //O(lgn)
+        heapExtractMax(A, heapSize); //O(lgn)
     }
 }

@@ -1,10 +1,12 @@
 package net.lilifei.basic;
 
 import net.lilifei.dataStructure.Heap;
+import net.lilifei.dataStructure.LinkedListNode;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.LinkedList;
 
 /**
  * Created by Lifei on 15/5/5.
@@ -319,5 +321,44 @@ public class Sort {
             heapSize--;
             Heap.maxHeapify(A, 0, heapSize);
         }
+    }
+
+    /**
+     * 6.5-8 : MERGE K SORTED LISTS
+     *
+     * @param lists : the list of k sorted lists
+     * @return : the head of the new list
+     */
+    public static LinkedListNode mergeKSortedLists(LinkedListNode[] lists) throws Exception {
+        if (lists == null || lists.length == 0) {
+            return null;
+        }
+        int k = lists.length;
+        LinkedListNode[] heap = new LinkedListNode[k];
+        for (int i = 0; i < k; i++) {
+            heap[i] = lists[i];
+        }
+        Heap.buildMinHeap(heap);
+        int heapSize = k;
+        LinkedListNode head = null;
+        LinkedListNode cur = head;
+        while (heapSize > 0) {
+            LinkedListNode newNode = Heap.heapExtractMin(heap, heapSize);
+            heapSize--;
+            LinkedListNode newList = newNode.next;
+            newNode.next = null;
+            if (cur == null) {
+                head = newNode;
+                cur = head;
+            } else {
+                cur.next = newNode;
+                cur = cur.next;
+            }
+            if (newList != null) {
+                Heap.minHeapInsert(heap, newList, heapSize);
+                heapSize++;
+            }
+        }
+        return head;
     }
 }

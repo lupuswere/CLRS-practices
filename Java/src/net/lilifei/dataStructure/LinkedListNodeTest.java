@@ -72,4 +72,13 @@ public class LinkedListNodeTest {
         assertTrue(!l1.equalsIntegerArray(testCase7));
         assertTrue(!l1.equalsIntegerArray(testCase8));
     }
+
+    @Test
+    public void testCompareTo() throws Exception {
+        LinkedListNode l1 = new LinkedListNode(2);
+        LinkedListNode l2 = new LinkedListNode(3);
+        LinkedListNode l3 = new LinkedListNode(1);
+        assertTrue(l1.compareTo(l2) < 0);
+        assertTrue(l1.compareTo(l3) > 0);
+    }
 }
