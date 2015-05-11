@@ -132,4 +132,12 @@ public class SortTest {
         int[] expected = {1, 1, 2, 2, 3, 5, 5, 6, 8, 8, 9, 9, 10, 11, 12, 15};
         assertTrue(head.equalsIntegerArray(expected));
     }
+
+    @Test
+    public void testQuickSort() throws Exception {
+        for (int i = 0; i < this.beforeSorted.length; i++) {
+            Sort.quickSort(this.beforeSorted[i]);
+            assertArrayEquals(this.expecteds[i], this.beforeSorted[i]);
+        }
+    }
 }
