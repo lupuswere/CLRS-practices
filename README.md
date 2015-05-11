@@ -8,8 +8,10 @@ _For each class, there is a unit test class._
     * Search
     * Sort
 * net.lilifei.dataStructure
+    * D-naryHeap
     * Heap
     * LinkedListNode
+    * YoungTableau
 * net.lilifei.random
     * RandomAlgorithm
     
