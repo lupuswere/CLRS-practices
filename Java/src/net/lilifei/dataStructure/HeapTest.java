@@ -262,6 +262,29 @@ public class HeapTest {
             assertTrue(Heap.isMaxHeap(testCase, lengthOfTestCase));
         }
     }
+
+    /**
+     * 6-1 a)
+     */
+//    @Test
+//    public void testTwoBuildMaxHeapMethodsIdentical() throws Exception {
+//        int countOfTestCases = 10;
+//        int lengthOfTestCase = 100;
+//        int rangeOfTestCase = 100;
+//        Random rd = new Random();
+//        for (int i = 0; i < countOfTestCases; i++) {
+//            int[] testCase = new int[lengthOfTestCase];
+//            int[] testCase2 = new int[lengthOfTestCase];
+//            for (int j = 0; j < lengthOfTestCase; j++) {
+//                int num = rd.nextInt(rangeOfTestCase);
+//                testCase[j] = num;
+//                testCase2[j] = num;
+//            }
+//            Heap.buildMaxHeapByInsert(testCase);
+//            Heap.buildMaxHeap(testCase2);
+//            assertArrayEquals(testCase, testCase2);
+//        }
+//    }
 }
 
 class ForTest implements Comparable<ForTest> {

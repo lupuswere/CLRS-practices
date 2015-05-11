@@ -609,7 +609,7 @@ public class Heap {
     }
 
     /**
-     * Make an array a max heap by inserting elements
+     * 6-1 : BUILD-MAX-HEAP, Make an array a max heap by inserting elements
      *
      * @param A : the original array
      */
