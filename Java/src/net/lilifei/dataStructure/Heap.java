@@ -587,7 +587,7 @@ public class Heap {
     //For 6.5-8
     public static void minHeapInsert(LinkedListNode[] A, LinkedListNode key, int heapSize) throws Exception {
         heapSize++;
-        if(heapSize <= 0) {
+        if (heapSize <= 0) {
             return;
         }
         A[heapSize - 1] = new LinkedListNode(Integer.MAX_VALUE);
@@ -606,5 +606,22 @@ public class Heap {
         }
         heapIncreaseKey(A, i, Integer.MAX_VALUE); //O(lgn)
         heapExtractMax(A, heapSize); //O(lgn)
+    }
+
+    /**
+     * Make an array a max heap by inserting elements
+     *
+     * @param A : the original array
+     */
+    public static void buildMaxHeapByInsert(int[] A) throws Exception {
+        if (A == null || A.length < 2) {
+            return;
+        }
+        int lenA = A.length;
+        int heapSize = 1;
+        for (int i = 1; i < lenA; i++) {
+            maxHeapInsert(A, A[i], heapSize);
+            heapSize++;
+        }
     }
 }
