@@ -396,7 +396,7 @@ public class Sort {
      */
     private static int partition(int[] A, int p, int r) {
         int x = A[r];
-        int i = p - 1;
+        int i = p - 1; //i is the end index of the small area
         for (int j = p; j <= (r - 1); j++) {
             if (A[j] <= x) {
                 i++;
@@ -408,6 +408,38 @@ public class Sort {
         int tmp = A[i + 1];
         A[i + 1] = A[r];
         A[r] = tmp;
+        return i + 1;
+    }
+
+    /**
+     * 7.1-2 : PARTITION-NEW
+     *
+     * @param A : the array of Integer that is to be sorted
+     * @param p : start index
+     * @param r : end index
+     * @return : partition index
+     */
+    private static int partitionNew(int[] A, int p, int r) {
+        int x = A[r];
+        int i = p - 1; //i is the end index of the small area
+        boolean identical = true;
+        for (int j = p; j <= (r - 1); j++) {
+            if(identical && x != A[j]){
+                identical = false;
+            }
+            if (A[j] < x) {
+                i++;
+                int tmp = A[i];
+                A[i] = A[j];
+                A[j] = tmp;
+            }
+        }
+        int tmp = A[i + 1];
+        A[i + 1] = A[r];
+        A[r] = tmp;
+        if(identical) {
+            return (p + r) / 2;
+        }
         return i + 1;
     }
 }
