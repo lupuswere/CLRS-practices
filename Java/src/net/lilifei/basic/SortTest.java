@@ -140,4 +140,12 @@ public class SortTest {
             assertArrayEquals(this.expecteds[i], this.beforeSorted[i]);
         }
     }
+
+    @Test
+    public void testRandomizedQuickSort() throws Exception {
+        for (int i = 0; i < this.beforeSorted.length; i++) {
+            Sort.randomizedQuickSort(this.beforeSorted[i]);
+            assertArrayEquals(this.expecteds[i], this.beforeSorted[i]);
+        }
+    }
 }

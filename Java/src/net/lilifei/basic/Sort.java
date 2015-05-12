@@ -7,6 +7,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.Random;
 
 /**
  * Created by Lifei on 15/5/5.
@@ -424,7 +425,7 @@ public class Sort {
         int i = p - 1; //i is the end index of the small area
         boolean identical = true;
         for (int j = p; j <= (r - 1); j++) {
-            if(identical && x != A[j]){
+            if (identical && x != A[j]) {
                 identical = false;
             }
             if (A[j] < x) {
@@ -437,9 +438,50 @@ public class Sort {
         int tmp = A[i + 1];
         A[i + 1] = A[r];
         A[r] = tmp;
-        if(identical) {
+        if (identical) {
             return (p + r) / 2;
         }
         return i + 1;
+    }
+
+    /**
+     * 7.3 : RANDOMIZED-QUICKSORT
+     *
+     * @param A : the array of Integer that is to be sorted
+     */
+    public static void randomizedQuickSort(int[] A) {
+        randomizedQuickSort(A, 0, A.length - 1);
+    }
+
+    /**
+     * 7.3 : RANDOMIZED-QUICKSORT
+     *
+     * @param A : the array of Integer that is to be sorted
+     * @param p : the start index
+     * @param r : the end index
+     */
+    private static void randomizedQuickSort(int[] A, int p, int r) {
+        if (p < r) {
+            int q = randomizedPartition(A, p, r);
+            randomizedQuickSort(A, p, q - 1);
+            randomizedQuickSort(A, q + 1, r);
+        }
+    }
+
+    /**
+     * 7.3 : RANDOMIZED-PARTITION
+     *
+     * @param A : the array of Integer that is to be sorted
+     * @param p : the start index
+     * @param r : the end index
+     * @return : the index of partition
+     */
+    private static int randomizedPartition(int[] A, int p, int r) {
+        Random rd = new Random();
+        int i = rd.nextInt(r - p + 1) + p;
+        int tmp = A[i];
+        A[i] = A[r];
+        A[r] = tmp;
+        return partition(A, p, r);
     }
 }
