@@ -148,4 +148,20 @@ public class SortTest {
             assertArrayEquals(this.expecteds[i], this.beforeSorted[i]);
         }
     }
+
+    @Test
+    public void testStoogeSort() throws Exception {
+        for (int i = 0; i < this.beforeSorted.length; i++) {
+            Sort.stoogeSort(this.beforeSorted[i]);
+            assertArrayEquals(this.expecteds[i], this.beforeSorted[i]);
+        }
+    }
+
+    @Test
+    public void testQuickSortTailRecursion() throws Exception {
+        for (int i = 0; i < this.beforeSorted.length; i++) {
+            Sort.quickSortTailRecursion(this.beforeSorted[i]);
+            assertArrayEquals(this.expecteds[i], this.beforeSorted[i]);
+        }
+    }
 }

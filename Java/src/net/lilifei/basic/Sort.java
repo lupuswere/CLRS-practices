@@ -379,7 +379,7 @@ public class Sort {
      * @param p : start index
      * @param r : end index
      */
-    private static void quickSort(int[] A, int p, int r) {
+    public static void quickSort(int[] A, int p, int r) {
         if (p < r) {
             int q = partition(A, p, r);
             quickSort(A, p, q - 1);
@@ -460,7 +460,7 @@ public class Sort {
      * @param p : the start index
      * @param r : the end index
      */
-    private static void randomizedQuickSort(int[] A, int p, int r) {
+    public static void randomizedQuickSort(int[] A, int p, int r) {
         if (p < r) {
             int q = randomizedPartition(A, p, r);
             randomizedQuickSort(A, p, q - 1);
@@ -483,5 +483,89 @@ public class Sort {
         A[i] = A[r];
         A[r] = tmp;
         return partition(A, p, r);
+    }
+
+    /**
+     * 7-1 : HOARE-PARTITION
+     *
+     * @param A : the original array
+     * @param p : the start index
+     * @param r : the end index
+     * @return : the partition index
+     */
+    public static int hoarePartition(int[] A, int p, int r) {
+        int x = A[p];
+        int i = p - 1;
+        int j = r + 1;
+        while (true) {
+            do {
+                j--;
+            } while (A[j] > x);
+            do {
+                i++;
+            } while (A[i] < x);
+            if (i < j) {
+                int tmp = A[i];
+                A[i] = A[j];
+                A[j] = tmp;
+            } else {
+                return j;
+            }
+        }
+    }
+
+    /**
+     * 7-3 Stooge Sort
+     *
+     * @param A : the original array
+     */
+    public static void stoogeSort(int[] A) {
+        stoogeSort(A, 0, A.length - 1);
+    }
+
+    /**
+     * 7-3 Stooge Sort
+     *
+     * @param A : the original array
+     * @param i : the start index
+     * @param j : the end index
+     */
+    public static void stoogeSort(int[] A, int i, int j) {
+        if (A[i] > A[j]) {
+            int tmp = A[i];
+            A[i] = A[j];
+            A[j] = tmp;
+        }
+        if ((i + 1) >= j) {
+            return;
+        }
+        int k = (j - i + 1) / 3;
+        stoogeSort(A, i, j - k);
+        stoogeSort(A, i + k, j);
+        stoogeSort(A, i, j - k);
+    }
+
+    /**
+     * 7-4 : QUICKSORT', used tail recursion to use constant space on stack
+     *
+     * @param A : the original array
+     */
+    public static void quickSortTailRecursion(int[] A) {
+        quickSortTailRecursion(A, 0, A.length - 1);
+    }
+
+    /**
+     * 7-4 : QUICKSORT', used tail recursion to use constant space on stack
+     *
+     * @param A : the original array
+     * @param p : the start index
+     * @param r : the end index
+     */
+    public static void quickSortTailRecursion(int[] A, int p, int r) {
+        while (p < r) {
+            int q = partition(A, p, r);
+            quickSortTailRecursion(A, p, q - 1);
+            p = q + 1;
+        }
     }
 }
