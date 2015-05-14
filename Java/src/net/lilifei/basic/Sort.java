@@ -573,7 +573,7 @@ public class Sort {
      * 7-6 a) : FUZZY SORT
      *
      * @param I : the array of Intervals
-     * Reference : http://www.fongboy.com/classes/cs180/hw3-sol.pdf
+     *          Reference : http://www.fongboy.com/classes/cs180/hw3-sol.pdf
      */
     public static void fuzzySort(Interval[] I) {
         fuzzySort(I, 0, I.length - 1);
@@ -616,6 +616,49 @@ public class Sort {
             I[i - l + p] = tmp3;
         }
         return new Interval(i - q + p - 1, i + 2);
+    }
+
+    /**
+     * 8.2 : COUNTING-SORT
+     *
+     * @param A : the array of Integer that is to be sorted
+     */
+    public static void countingSort(int[] A) {
+        if (A == null || A.length < 1) {
+            return;
+        }
+        int max = 0;
+        int[] B = new int[A.length];
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] > max) {
+                max = A[i];
+            }
+        }
+        countingSort(A, B, max);
+    }
+
+    /**
+     * 8.2 : COUNTING-SORT
+     *
+     * @param A : the array of Integer that is to be sorted
+     * @param B : the results
+     * @param k :
+     */
+    public static void countingSort(int[] A, int[] B, int k) {
+        int[] C = new int[k + 1];
+        for (int j = 0; j < A.length; j++) {
+            C[A[j]]++;
+        }
+        for (int i = 1; i <= k; i++) {
+            C[i] = C[i] + C[i - 1];
+        }
+        for (int j = A.length - 1; j >= 0; j--) {
+            B[C[A[j]] - 1] = A[j];
+            C[A[j]]--;
+        }
+        for (int i = 0; i < B.length; i++) {
+            A[i] = B[i];
+        }
     }
     //Killer adversary : always find minimum in the partition
 }

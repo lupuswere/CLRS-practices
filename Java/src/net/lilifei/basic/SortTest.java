@@ -31,8 +31,10 @@ public class SortTest {
         Random rd = new Random();
         for (int i = 0; i < this.countOfTestCases; i++) {
             for (int j = 0; j < this.lengthOfTestCase; j++) {
-                int rdInt = rd.nextInt(this.rangeOfTestCase) - 100;
-                this.beforeSorted[i][j] = rdInt; // Range (-100, 100)
+//                int rdInt = rd.nextInt(this.rangeOfTestCase) - 100;
+                int rdInt = rd.nextInt(this.rangeOfTestCase);
+//                this.beforeSorted[i][j] = rdInt; // Range (-100, 100)
+                this.beforeSorted[i][j] = rdInt; // Range (0, 200)
                 this.expecteds[i][j] = rdInt;
             }
         }
@@ -180,6 +182,14 @@ public class SortTest {
         Arrays.sort(expected);
         for (int i = 0; i < beforeSorted.length; i++) {
             assertTrue((beforeSorted[i].getLeft() == expected[i].getLeft()) && (beforeSorted[i].getRight() == expected[i].getRight()));
+        }
+    }
+
+    @Test
+    public void testCountingSort() throws Exception {
+        for (int i = 0; i < this.beforeSorted.length; i++) {
+            Sort.countingSort(this.beforeSorted[i]);
+            assertArrayEquals(this.expecteds[i], this.beforeSorted[i]);
         }
     }
 }
