@@ -568,4 +568,54 @@ public class Sort {
             p = q + 1;
         }
     }
+
+    /**
+     * 7-6 a) : FUZZY SORT
+     *
+     * @param I : the array of Intervals
+     * Reference : http://www.fongboy.com/classes/cs180/hw3-sol.pdf
+     */
+    public static void fuzzySort(Interval[] I) {
+        fuzzySort(I, 0, I.length - 1);
+    }
+
+    public static void fuzzySort(Interval[] I, int p, int r) {
+        if (p < r) {
+            Interval q = fuzzyPartition(I, p, r);
+            fuzzySort(I, p, q.getLeft());
+            fuzzySort(I, q.getRight(), r);
+        }
+    }
+
+    private static Interval fuzzyPartition(Interval[] I, int p, int r) {
+        int x = I[r].getLeft();
+        int i = p - 1;
+        for (int j = p; j <= (r - 1); j++) {
+            if (I[j].getLeft() <= x) {
+                i++;
+                Interval tmp = I[i];
+                I[i] = I[j];
+                I[j] = tmp;
+            }
+        }
+        Interval tmp = I[i + 1];
+        I[i + 1] = I[r];
+        I[r] = tmp;
+        int q = p - 1;
+        for (int k = p; k <= i; k++) {
+            if (I[k].getRight() >= x) {
+                q++;
+                Interval tmp2 = I[k];
+                I[k] = I[q];
+                I[q] = tmp2;
+            }
+        }
+        for (int l = p; l <= q; l++) {
+            Interval tmp3 = I[l];
+            I[l] = I[i - l + p];
+            I[i - l + p] = tmp3;
+        }
+        return new Interval(i - q + p - 1, i + 2);
+    }
+    //Killer adversary : always find minimum in the partition
 }

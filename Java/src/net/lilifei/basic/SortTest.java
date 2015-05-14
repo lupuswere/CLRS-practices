@@ -164,4 +164,22 @@ public class SortTest {
             assertArrayEquals(this.expecteds[i], this.beforeSorted[i]);
         }
     }
+
+    @Test
+    public void testFuzzySort() throws Exception {
+        Interval[] beforeSorted = new Interval[100];
+        Interval[] expected = new Interval[100];
+        Random rd = new Random();
+        for (int i = 0; i < beforeSorted.length; i++) {
+            int left = rd.nextInt(100);
+            int right = left + rd.nextInt(100);
+            beforeSorted[i] = new Interval(left, right);
+            expected[i] = new Interval(left, right);
+        }
+        Sort.fuzzySort(beforeSorted);
+        Arrays.sort(expected);
+        for (int i = 0; i < beforeSorted.length; i++) {
+            assertTrue((beforeSorted[i].getLeft() == expected[i].getLeft()) && (beforeSorted[i].getRight() == expected[i].getRight()));
+        }
+    }
 }

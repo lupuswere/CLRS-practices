@@ -7,6 +7,7 @@ _For each class, there is a unit test class._
 * net.lilifei.basic
     * Search
     * Sort
+    * Interval (built for fuzzy sort)
 * net.lilifei.dataStructure
     * D-naryHeap
     * Heap
@@ -53,4 +54,4 @@ public static void maxHeapify(int[] A, int i, int heapSize) {
 You can search for 6.2 or MAX-HEAPIFY as it is in the book.
 
 ## Current Progress
-Chapter 7.1
+Chapter 8
