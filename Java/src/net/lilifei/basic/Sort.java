@@ -569,6 +569,7 @@ public class Sort {
         }
     }
 
+    //Killer adversary : always find minimum in the partition
     /**
      * 7-6 a) : FUZZY SORT
      *
@@ -660,5 +661,28 @@ public class Sort {
             A[i] = B[i];
         }
     }
-    //Killer adversary : always find minimum in the partition
+
+    /**
+     * 8.2-4 : PRE-PROCESSING
+     *
+     * @param A : the original array
+     * @param k : the range of A
+     * @return : the result set
+     */
+    public static int[] preProcess(int[] A, int k) {
+        int[] resultSet = new int[k + 1];
+        for (int i = 0; i < A.length; i++) {
+            resultSet[A[i]]++;
+        }
+        for (int i = 1; i <= k; i++) {
+            resultSet[i] = resultSet[i] + resultSet[i - 1];
+        }
+        return resultSet;
+    }
+
+    public static int returnCountInInterval(int[] res, int a, int b) {
+        int right = res[b];
+        int left = a == 0 ? 0 : res[a - 1];
+        return right - left;
+    }
 }

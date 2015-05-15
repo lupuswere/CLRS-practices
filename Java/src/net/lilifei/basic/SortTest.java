@@ -192,4 +192,21 @@ public class SortTest {
             assertArrayEquals(this.expecteds[i], this.beforeSorted[i]);
         }
     }
+
+    @Test
+    public void testPreProcess() throws Exception {
+        for (int i = 0; i < this.beforeSorted.length; i++) {
+            int[] testCase = this.beforeSorted[i];
+            int[] sorted = this.expecteds[i];
+            int[] res = Sort.preProcess(testCase, sorted[sorted.length - 1]);
+            int a = 50, b = 150;
+            int count = 0;
+            for (int j = 0; j < testCase.length; j++) {
+                if(testCase[j] <= b && testCase[j] >= a){
+                    count++;
+                }
+            }
+            assertEquals(count, Sort.returnCountInInterval(res, a, b));
+        }
+    }
 }
