@@ -55,4 +55,4 @@ public static void maxHeapify(int[] A, int i, int heapSize) {
 You can search for 6.2 or MAX-HEAPIFY as it is in the book.
 
 ## Current Progress
-Chapter 8.3
+Chapter 8.4

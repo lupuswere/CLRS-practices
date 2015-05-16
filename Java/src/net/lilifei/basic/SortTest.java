@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.Random;
 
 import static org.junit.Assert.*;
@@ -17,7 +16,7 @@ import static org.junit.Assert.*;
 public class SortTest {
     int countOfTestCases = 10;
     int lengthOfTestCase = 100;
-    int rangeOfTestCase = 200;
+    int rangeOfTestCase = 100;
     int[][] beforeSorted;
     int[][] expecteds;
 
@@ -34,7 +33,7 @@ public class SortTest {
 //                int rdInt = rd.nextInt(this.rangeOfTestCase) - 100;
                 int rdInt = rd.nextInt(this.rangeOfTestCase);
 //                this.beforeSorted[i][j] = rdInt; // Range (-100, 100)
-                this.beforeSorted[i][j] = rdInt; // Range (0, 200)
+                this.beforeSorted[i][j] = rdInt; // Range (0,100)
                 this.expecteds[i][j] = rdInt;
             }
         }

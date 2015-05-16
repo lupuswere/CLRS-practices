@@ -772,4 +772,14 @@ public class Sort {
             }
         }
     }
+
+    /**
+     * 8.4 : BUCKET-SORT
+     *
+     * @param A : the array
+     */
+    public static void bucketSort(int[] A) {
+        //TODO
+    }
+
 }
