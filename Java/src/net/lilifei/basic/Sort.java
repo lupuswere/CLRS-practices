@@ -570,6 +570,7 @@ public class Sort {
     }
 
     //Killer adversary : always find minimum in the partition
+
     /**
      * 7-6 a) : FUZZY SORT
      *
@@ -684,5 +685,91 @@ public class Sort {
         int right = res[b];
         int left = a == 0 ? 0 : res[a - 1];
         return right - left;
+    }
+
+    /**
+     * 8.3 : RADIX-SORT
+     *
+     * @param A   : the array
+     * @param <T> : a class that can be compared by digit
+     */
+    public static <T extends DigitalComparable<? super T>> void radixSort(T[] A) {
+        if (A == null || A.length < 2) {
+            return;
+        }
+        int lenA = A.length;
+        int maxD = 0;
+        for (int i = 0; i < lenA; i++) {
+            int d = A[i].dNum();
+            if (d > maxD) {
+                maxD = d;
+            }
+        }
+        radixSort(A, maxD);
+    }
+
+    /**
+     * 8.3 : RADIX-SORT
+     *
+     * @param A   : the array
+     * @param d   : the max number of digits in the array
+     * @param <T> : a class that can be compared by digit
+     */
+    public static <T extends DigitalComparable<? super T>> void radixSort(T[] A, int d) {
+        for (int i = 1; i <= d; i++) {
+            mergeSortByDigit(A, i);
+        }
+    }
+
+    private static <T extends DigitalComparable<? super T>> void mergeSortByDigit(T[] A, int d) {
+        mergeSortByDigit(A, d, 0, A.length - 1);
+    }
+
+    private static <T extends DigitalComparable<? super T>> void mergeSortByDigit(T[] A, int d, int p, int r) {
+        if (p < r) {
+            int q = (p + r) / 2;
+            mergeSortByDigit(A, d, p, q);
+            mergeSortByDigit(A, d, q + 1, r);
+            mergeByDigit(A, d, p, q, r);
+        }
+    }
+
+    private static <T extends DigitalComparable<? super T>> void mergeByDigit(T[] A, int d, int p, int q, int r) {
+        int n1 = q - p + 1;
+        int n2 = r - q;
+        T[] L = Arrays.copyOf(A, n1);
+        T[] R = Arrays.copyOf(A, n2);
+        for (int i = 0; i < n1; i++) {
+            L[i] = A[p + i];
+        }
+        for (int j = 0; j < n2; j++) {
+            R[j] = A[q + j + 1];
+        }
+        int i = 0;
+        int j = 0;
+        for (int k = p; k <= r; k++) {
+            if (i >= n1) {
+                while (j < n2) {
+                    A[k] = R[j];
+                    j++;
+                    k++;
+                }
+                break;
+            } else if (j >= n2) {
+                while (i < n1) {
+                    A[k] = L[i];
+                    i++;
+                    k++;
+                }
+                break;
+            }
+            if (L[i].compareDigitTo(R[j], d) <= 0) {
+                A[k] = L[i];
+                i++;
+            } else {
+                A[k] = R[j];
+                j++;
+            }
+        }
     }
 }
