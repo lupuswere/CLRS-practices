@@ -21,7 +21,7 @@ public class Kettle {
     }
 
     /**
-     * 8-4 a) : KETTLE
+     * 8-4 a) : WATER JUGS
      *
      * @param rks : the red kettles
      * @param bks : the blue kettles

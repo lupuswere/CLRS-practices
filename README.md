@@ -9,6 +9,7 @@ _For each class, there is a unit test class._
     * Sort
     * Interval (built for fuzzy sort)
     * DigitalComparable (built for radix sort)
+    * Kettle (not completed)
 * net.lilifei.dataStructure
     * D-naryHeap
     * Heap
