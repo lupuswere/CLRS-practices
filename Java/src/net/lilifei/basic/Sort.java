@@ -782,4 +782,13 @@ public class Sort {
         //TODO
     }
 
+    /**
+     * 8-5 : AVERAGE SORT
+     *
+     * @param A : the array
+     * @param k : k-sorted
+     */
+    public static void averageSort(int[] A, int k) {
+
+    }
 }

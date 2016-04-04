@@ -14,11 +14,11 @@ import static org.junit.Assert.*;
  * Created by Lifei on 15/5/5.
  */
 public class SortTest {
-    int countOfTestCases = 10;
-    int lengthOfTestCase = 100;
-    int rangeOfTestCase = 100;
-    int[][] beforeSorted;
-    int[][] expecteds;
+    private int countOfTestCases = 10;
+    private int lengthOfTestCase = 100;
+    private int rangeOfTestCase = 100;
+    private int[][] beforeSorted;
+    private int[][] expecteds;
 
     public SortTest() {
         this.beforeSorted = new int[countOfTestCases][lengthOfTestCase];
