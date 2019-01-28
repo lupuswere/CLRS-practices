@@ -1,6 +1,6 @@
-package net.lilifei.basic;
+package net.lilifei.algorithm.basic;
 
-import net.lilifei.dataStructure.LinkedListNode;
+import net.lilifei.algorithm.dataStructure.LinkedListNode;
 import org.junit.Before;
 import org.junit.Test;
 

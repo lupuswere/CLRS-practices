@@ -1,4 +1,4 @@
-package net.lilifei.random;
+package net.lilifei.algorithm.random;
 
 import java.util.Arrays;
 

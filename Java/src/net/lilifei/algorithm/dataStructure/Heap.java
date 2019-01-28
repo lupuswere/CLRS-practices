@@ -1,7 +1,4 @@
-package net.lilifei.dataStructure;
-
-import java.util.Comparator;
-import java.util.LinkedList;
+package net.lilifei.algorithm.dataStructure;
 
 /**
  * Created by Lifei on 15/5/8.

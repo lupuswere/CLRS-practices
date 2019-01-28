@@ -1,6 +1,6 @@
-package net.lilifei.basic;
+package net.lilifei.algorithm.basic;
 
-import net.lilifei.random.RandomAlgorithm;
+import net.lilifei.algorithm.random.RandomAlgorithm;
 
 import java.util.Arrays;
 import java.util.Random;

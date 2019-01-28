@@ -1,4 +1,4 @@
-package net.lilifei.dataStructure;
+package net.lilifei.algorithm.dataStructure;
 
 /**
  * Created by Lifei on 15/5/10.

@@ -1,8 +1,7 @@
-package net.lilifei.basic;
+package net.lilifei.algorithm.basic;
 
 import org.junit.Before;
 import org.junit.Test;
-import net.lilifei.basic.Search;
 
 import java.util.Arrays;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package net.lilifei.dataStructure;
+package net.lilifei.algorithm.dataStructure;
 
 import org.junit.Test;
 

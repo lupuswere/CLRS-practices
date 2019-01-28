@@ -1,8 +1,7 @@
-package net.lilifei.dataStructure;
+package net.lilifei.algorithm.dataStructure;
 
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.Random;
 
 import static org.junit.Assert.*;
