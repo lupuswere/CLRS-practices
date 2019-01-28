@@ -7,25 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="066dd43c-b33f-43d6-a801-bcc11dc5f825" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/model/BlueKettle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/model/DigitalNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/model/RedKettle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Java.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/basic/DigitalComparable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/basic/DigitalComparable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/basic/Interval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Interval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/basic/Kettle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Kettle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/basic/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/basic/SearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/net/lilifei/algorithm/basic/SearchTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/basic/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Sort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/basic/SortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/net/lilifei/algorithm/basic/SortTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/dataStructure/DnaryHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/dataStructure/DnaryHeap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/dataStructure/DnaryHeapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/net/lilifei/algorithm/dataStructure/DnaryHeapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/dataStructure/Heap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/dataStructure/Heap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/dataStructure/HeapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/net/lilifei/algorithm/dataStructure/HeapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/dataStructure/LinkedListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/dataStructure/LinkedListNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/dataStructure/LinkedListNodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/net/lilifei/algorithm/dataStructure/LinkedListNodeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/dataStructure/YoungTableau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/dataStructure/YoungTableau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/lilifei/random/RandomAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/random/RandomAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Kettle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/model/Kettle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Sort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/lilifei/algorithm/dataStructure/DnaryHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/datastructure/DnaryHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/lilifei/algorithm/dataStructure/Heap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/datastructure/Heap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/lilifei/algorithm/dataStructure/LinkedListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/datastructure/LinkedListNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/lilifei/algorithm/dataStructure/YoungTableau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/lilifei/algorithm/datastructure/YoungTableau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/net/lilifei/algorithm/basic/SortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/net/lilifei/algorithm/basic/SortTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/net/lilifei/algorithm/dataStructure/DnaryHeapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/net/lilifei/algorithm/datastructure/DnaryHeapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/net/lilifei/algorithm/dataStructure/HeapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/net/lilifei/algorithm/datastructure/HeapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/net/lilifei/algorithm/dataStructure/LinkedListNodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/net/lilifei/algorithm/datastructure/LinkedListNodeTest.java" afterDir="false" />
     </list>
     <ignored path="Java.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,28 +40,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/basic/DigitalComparable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Sort.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
-              <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tst/net/lilifei/algorithm/basic/SortTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="548">
+              <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,15 +52,100 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Kettle.java">
+        <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/model/DigitalNumber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+            <state relative-caret-position="30">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tst/net/lilifei/algorithm/datastructure/HeapTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="260" column="29" selection-start-line="260" selection-start-column="29" selection-end-line="260" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tst/net/lilifei/algorithm/basic/SearchTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/model/Kettle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/datastructure/DnaryHeap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/datastructure/LinkedListNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/datastructure/Heap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="523" column="9" selection-start-line="523" selection-start-column="9" selection-end-line="523" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Interval.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/datastructure/YoungTableau.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -91,12 +154,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Kettle.java" />
+        <option value="$PROJECT_DIR$/tst/net/lilifei/algorithm/datastructure/HeapTest.java" />
+        <option value="$PROJECT_DIR$/src/net/lilifei/algorithm/model/Kettle.java" />
+        <option value="$PROJECT_DIR$/tst/net/lilifei/algorithm/basic/SortTest.java" />
+        <option value="$PROJECT_DIR$/src/net/lilifei/algorithm/model/DigitalNumber.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="17" />
     <option name="y" value="23" />
-    <option name="width" value="1243" />
+    <option name="width" value="1227" />
     <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -136,15 +204,14 @@
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="basic" type="462c0819:PsiDirectoryNode" />
-              <item name="Kettle.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+              <item name="datastructure" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Java" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="dataStructure" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Java" type="b2602c69:ProjectViewProjectNode" />
@@ -176,7 +243,11 @@
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="tst" type="462c0819:PsiDirectoryNode" />
               <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="dataStructure" type="462c0819:PsiDirectoryNode" />
+              <item name="datastructure" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -186,15 +257,20 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548635479484" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548636312661" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/net/lilifei/algorithm/model" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -204,6 +280,13 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="net.lilifei.algorithm.model" />
+      <recent name="net.lilifei.algorithm.dataStructure" />
+      <recent name="net.lilifei.algorithm.basic" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -426,12 +509,12 @@
       <option name="presentableId" value="Default" />
       <updated>1430872897259</updated>
       <workItem from="1430872900591" duration="15000" />
-      <workItem from="1548635277556" duration="248000" />
+      <workItem from="1548635277556" duration="954000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263000" />
+    <option name="totallyTimeSpent" value="969000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1243" height="777" extended-state="0" />
@@ -483,29 +566,167 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tst/net/lilifei/algorithm/basic/SortTest.java">
+    <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Sort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Interval.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/datastructure/YoungTableau.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tst/net/lilifei/algorithm/basic/SearchTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Kettle.java">
+    <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/datastructure/DnaryHeap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/basic/Sort.java">
+    <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/datastructure/LinkedListNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/model/Kettle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tst/net/lilifei/algorithm/basic/SortTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/model/DigitalNumber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tst/net/lilifei/algorithm/datastructure/HeapTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="260" column="29" selection-start-line="260" selection-start-column="29" selection-end-line="260" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/lilifei/algorithm/datastructure/Heap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="523" column="9" selection-start-line="523" selection-start-column="9" selection-end-line="523" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>scala-sdk-2.11.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Java</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

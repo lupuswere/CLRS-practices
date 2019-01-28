@@ -1,4 +1,4 @@
-package net.lilifei.algorithm.basic;
+package net.lilifei.algorithm.v1.basic;
 
 import org.junit.Before;
 import org.junit.Test;

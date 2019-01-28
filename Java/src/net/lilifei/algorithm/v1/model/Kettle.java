@@ -1,4 +1,4 @@
-package net.lilifei.algorithm.basic;
+package net.lilifei.algorithm.v1.model;
 
 import java.util.HashMap;
 
@@ -40,14 +40,3 @@ public class Kettle {
     }
 }
 
-class RedKettle extends Kettle {
-    public RedKettle(int val) {
-        super(val);
-    }
-}
-
-class BlueKettle extends Kettle {
-    public BlueKettle(int val) {
-        super(val);
-    }
-}

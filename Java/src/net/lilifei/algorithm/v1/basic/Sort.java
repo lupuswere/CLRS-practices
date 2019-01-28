@@ -1,7 +1,7 @@
-package net.lilifei.algorithm.basic;
+package net.lilifei.algorithm.v1.basic;
 
-import net.lilifei.algorithm.dataStructure.Heap;
-import net.lilifei.algorithm.dataStructure.LinkedListNode;
+import net.lilifei.algorithm.v1.datastructure.Heap;
+import net.lilifei.algorithm.v1.datastructure.LinkedListNode;
 
 import java.util.Arrays;
 import java.util.Random;

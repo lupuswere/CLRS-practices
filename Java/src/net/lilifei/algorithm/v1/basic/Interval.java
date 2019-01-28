@@ -1,4 +1,4 @@
-package net.lilifei.algorithm.basic;
+package net.lilifei.algorithm.v1.basic;
 
 /**
  * Created by Lifei on 15/5/12.

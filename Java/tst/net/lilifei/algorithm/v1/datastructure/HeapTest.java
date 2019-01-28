@@ -1,5 +1,6 @@
-package net.lilifei.algorithm.dataStructure;
+package net.lilifei.algorithm.v1.datastructure;
 
+import net.lilifei.algorithm.v1.model.DataObject;
 import org.junit.Test;
 
 import java.util.Random;
@@ -39,11 +40,11 @@ public class HeapTest {
     public void testMaxHeapify() throws Exception {
         int[] beforeInt = {4, 15, 9, 6, 7, 5, 7};
         int[] expectedInt = {15, 7, 9, 6, 4, 5, 7};
-        ForTest[] before = new ForTest[7];
-        ForTest[] expected = new ForTest[7];
+        DataObject[] before = new DataObject[7];
+        DataObject[] expected = new DataObject[7];
         for (int i = 0; i < 7; i++) {
-            before[i] = new ForTest(beforeInt[i]);
-            expected[i] = new ForTest(expectedInt[i]);
+            before[i] = new DataObject(beforeInt[i]);
+            expected[i] = new DataObject(expectedInt[i]);
         }
         Heap.maxHeapify(before, 0, 7);
         for (int i = 0; i < 7; i++) {
@@ -63,11 +64,11 @@ public class HeapTest {
     public void testMinHeapify() throws Exception {
         int[] beforeInt = {16, 8, 11, 11, 12, 18, 12};
         int[] expectedInt = {8, 11, 11, 16, 12, 18, 12};
-        ForTest[] before = new ForTest[7];
-        ForTest[] expected = new ForTest[7];
+        DataObject[] before = new DataObject[7];
+        DataObject[] expected = new DataObject[7];
         for (int i = 0; i < 7; i++) {
-            before[i] = new ForTest(beforeInt[i]);
-            expected[i] = new ForTest(expectedInt[i]);
+            before[i] = new DataObject(beforeInt[i]);
+            expected[i] = new DataObject(expectedInt[i]);
         }
         Heap.minHeapify(before, 0, 7);
         for (int i = 0; i < 7; i++) {
@@ -87,11 +88,11 @@ public class HeapTest {
     public void testMaxHeapifyIterative() throws Exception {
         int[] beforeInt = {4, 15, 9, 6, 7, 5, 7};
         int[] expectedInt = {15, 7, 9, 6, 4, 5, 7};
-        ForTest[] before = new ForTest[7];
-        ForTest[] expected = new ForTest[7];
+        DataObject[] before = new DataObject[7];
+        DataObject[] expected = new DataObject[7];
         for (int i = 0; i < 7; i++) {
-            before[i] = new ForTest(beforeInt[i]);
-            expected[i] = new ForTest(expectedInt[i]);
+            before[i] = new DataObject(beforeInt[i]);
+            expected[i] = new DataObject(expectedInt[i]);
         }
         Heap.maxHeapifyIterative(before, 0, 7);
         for (int i = 0; i < 7; i++) {
@@ -118,7 +119,7 @@ public class HeapTest {
             for (int j = 0; j < lengthOfTestCase; j++) {
                 tmpTestCase[j] = rd.nextInt(rangeOfTestCase);
             }
-            ForTest[] testCase = ForTest.turn(tmpTestCase);
+            DataObject[] testCase = DataObject.turn(tmpTestCase);
             Heap.buildMaxHeap(testCase);
             assertTrue(Heap.isMaxHeap(testCase, lengthOfTestCase));
         }
@@ -144,8 +145,8 @@ public class HeapTest {
     public void testIsMaxHeap() throws Exception {
         int[] tmp1 = {4, 15, 9, 6, 7, 5, 7};
         int[] tmp2 = {15, 7, 9, 6, 4, 5, 7};
-        ForTest[] testCase1 = ForTest.turn(tmp1);
-        ForTest[] testCase2 = ForTest.turn(tmp2);
+        DataObject[] testCase1 = DataObject.turn(tmp1);
+        DataObject[] testCase2 = DataObject.turn(tmp2);
         assertTrue(!Heap.isMaxHeap(testCase1, 7));
         assertTrue(Heap.isMaxHeap(testCase2, 7));
     }
@@ -162,8 +163,8 @@ public class HeapTest {
     public void testIsMinHeap() throws Exception {
         int[] tmp1 = {16, 8, 11, 11, 12, 18, 12};
         int[] tmp2 = {8, 11, 11, 16, 12, 18, 12};
-        ForTest[] testCase1 = ForTest.turn(tmp1);
-        ForTest[] testCase2 = ForTest.turn(tmp2);
+        DataObject[] testCase1 = DataObject.turn(tmp1);
+        DataObject[] testCase2 = DataObject.turn(tmp2);
         assertTrue(!Heap.isMinHeap(testCase1, 7));
         assertTrue(Heap.isMinHeap(testCase2, 7));
     }
@@ -179,8 +180,8 @@ public class HeapTest {
     @Test
     public void testHeapExtractMax() throws Exception {
         int[] tmp = {15, 7, 9, 6, 4, 5, 7};
-        ForTest[] testCase = ForTest.turn(tmp);
-        ForTest max = Heap.heapExtractMax(testCase, 7);
+        DataObject[] testCase = DataObject.turn(tmp);
+        DataObject max = Heap.heapExtractMax(testCase, 7);
         assertTrue(max.getValue() == 15 && Heap.isMaxHeap(testCase, 7));
     }
 
@@ -208,8 +209,8 @@ public class HeapTest {
     @Test
     public void testHeapExtractMin() throws Exception {
         int[] tmp = {8, 11, 11, 16, 12, 18, 12};
-        ForTest[] testCase = ForTest.turn(tmp);
-        ForTest min = Heap.heapExtractMin(testCase, 7);
+        DataObject[] testCase = DataObject.turn(tmp);
+        DataObject min = Heap.heapExtractMin(testCase, 7);
         assertTrue(min.getValue() == 8 && Heap.isMinHeap(testCase, 7));
     }
 
@@ -286,35 +287,3 @@ public class HeapTest {
 //    }
 }
 
-class ForTest implements Comparable<ForTest> {
-    private int value;
-
-    public ForTest(int value) {
-        this.value = value;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public int compareTo(ForTest o) {
-        return this.getValue() - o.getValue();
-    }
-
-    public boolean equals(ForTest o) {
-        return this.getValue() == o.getValue();
-    }
-
-    public static ForTest[] turn(int[] A) {
-        if (A == null || A.length == 0) {
-            return null;
-        }
-        int lenA = A.length;
-        ForTest[] res = new ForTest[lenA];
-        for (int i = 0; i < lenA; i++) {
-            res[i] = new ForTest(A[i]);
-        }
-        return res;
-    }
-}
