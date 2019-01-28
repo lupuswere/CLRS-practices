@@ -1,7 +1,7 @@
-package net.lilifei.algorithm.v1.basic;
+package net.lilifei.algorithm.clrs.v1.basic;
 
-import net.lilifei.algorithm.v1.datastructure.LinkedListNode;
-import net.lilifei.algorithm.v1.model.DigitalNumber;
+import net.lilifei.algorithm.clrs.v1.datastructure.LinkedListNode;
+import net.lilifei.algorithm.clrs.v1.model.DigitalNumber;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 

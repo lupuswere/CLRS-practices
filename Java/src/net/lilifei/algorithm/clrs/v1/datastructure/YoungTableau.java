@@ -1,4 +1,4 @@
-package net.lilifei.algorithm.v1.datastructure;
+package net.lilifei.algorithm.clrs.v1.datastructure;
 
 import java.util.Arrays;
 

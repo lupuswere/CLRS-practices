@@ -1,6 +1,6 @@
-package net.lilifei.algorithm.v1.datastructure;
+package net.lilifei.algorithm.clrs.v1.datastructure;
 
-import net.lilifei.algorithm.v1.model.DataObject;
+import net.lilifei.algorithm.clrs.v1.model.DataObject;
 import org.junit.Test;
 
 import java.util.Random;

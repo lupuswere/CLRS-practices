@@ -1,4 +1,4 @@
-package net.lilifei.algorithm.v1.model;
+package net.lilifei.algorithm.clrs.v1.model;
 
 import java.util.HashMap;
 

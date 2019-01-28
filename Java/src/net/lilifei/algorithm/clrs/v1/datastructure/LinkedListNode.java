@@ -1,4 +1,4 @@
-package net.lilifei.algorithm.v1.datastructure;
+package net.lilifei.algorithm.clrs.v1.datastructure;
 
 /**
  * Created by Lifei on 15/5/10.

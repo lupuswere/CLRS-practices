@@ -1,6 +1,6 @@
-package net.lilifei.algorithm.v1.model;
+package net.lilifei.algorithm.clrs.v1.model;
 
-import net.lilifei.algorithm.v1.basic.DigitalComparable;
+import net.lilifei.algorithm.clrs.v1.basic.DigitalComparable;
 
 import java.util.ArrayList;
 

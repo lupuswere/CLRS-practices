@@ -1,6 +1,6 @@
-package net.lilifei.algorithm.v1.basic;
+package net.lilifei.algorithm.clrs.v1.basic;
 
-import net.lilifei.algorithm.v1.random.RandomAlgorithm;
+import net.lilifei.algorithm.clrs.v1.random.RandomAlgorithm;
 
 import java.util.Arrays;
 import java.util.Random;
