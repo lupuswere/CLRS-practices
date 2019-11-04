@@ -5,10 +5,9 @@ import net.lilifei.algorithm.clrs.v2.validate.Exception.ValidationFailedExceptio
 import java.util.Comparator;
 import java.util.List;
 
-public class SortedListValidator<T> implements Validator<List<T>, Comparator<T>> {
+public class SortedListValidator {
 
-    @Override
-    public void validate(final List<T> object, final Comparator<T> helper) {
+    public <T> void validate(final List<T> object, final Comparator<T> helper) {
         if (object == null || object.isEmpty() || object.size() == 1) {
             return;
         }

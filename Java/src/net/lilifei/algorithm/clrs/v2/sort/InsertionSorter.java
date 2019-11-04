@@ -6,17 +6,14 @@ import java.util.List;
 
 /**
  * Insert sort implementation of sorter.
- * @param <T> the type of the data to sort.
  */
-public class InsertSorter<T> implements Sorter<T> {
+public class InsertionSorter implements Sorter {
 
     @Override
-    public List<T> sort(final List<T> elements,
-                        final Comparator<T> comparator) {
-        if (elements == null) {
-            return null;
-        }
-        final List<T> result = new ArrayList<>(elements);
+    public <T> List<T> sort(final List<T> elements,
+                            final Comparator<T> comparator) {
+        if (elements == null) return null;
+        final List<T> result = new ArrayList<>(elements); // in-place
         if (elements.size() < 2) {
             return result;
         }
